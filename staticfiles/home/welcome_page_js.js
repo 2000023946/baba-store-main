@@ -168,10 +168,13 @@ let html = '';
 let groceryHtml = ``;
 
 function generateGroceryProductHtml(name, image){
+    const url = image;
+    const fileName = url.substring(url.lastIndexOf('/') + 1);
+    console.log(fileName)
     return `
         <div class="grocery-display-product">
             <div class="product-image-container">
-                <img class="product-image" src="${image}" alt="">
+                <img class="product-image" src="../../media/grocery/${fileName}" alt="">
             </div>
             <div class="product-description">
                 ${name}
@@ -248,10 +251,13 @@ let contactHtml = `<div class="contact-content ">
         </div>`;
 let meatDisplayHtml = '';
 function generateMeatProductHtml(name, image){
+    const url = image;
+    const fileName = url.substring(url.lastIndexOf('/') + 1);
+    console.log(fileName)
     return `
         <div class="meat-display-product">
             <div class="product-image-container">
-                <img class="product-image" src="${image}" alt="">
+                <img class="product-image" src="../../media/meat_products/${fileName}" alt="">
             </div>
             <div class="product-description">
                 ${name}
@@ -292,7 +298,7 @@ async function generateMeatHtml(){
     let middleProduct = `
                 <div data-name="all" class="product middle-product">
                     <div class="product-image-container">
-                        <img class="product-image" src="../../static/home/meat.png" alt="">
+                        <img class="product-image" src="goatLeg.png" alt="">
                     </div>
                     <div class="product-description">
                         View all Meat
