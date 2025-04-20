@@ -257,7 +257,7 @@ function generateMeatProductHtml(name, image){
     return `
         <div class="meat-display-product">
             <div class="product-image-container">
-                <img class="product-image" src="../../media/meat_products/${fileName}" alt="">
+                <img class="product-image" src="../../static/home/${fileName}" alt="">
             </div>
             <div class="product-description">
                 ${name}
