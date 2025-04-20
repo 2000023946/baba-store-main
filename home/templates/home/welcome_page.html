@@ -1,0 +1,133 @@
+{% extends 'home/layout.html' %}
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home/welcome_page_style.css' %}?v={% now 'U' %}">
+{% endblock %}
+
+{% block body %}
+<div class="header">
+    <div class="body-header">
+        <div class="text-header-container">
+            <div class="logo-pic-container">
+                {% load static %}
+                <div class="text-logo-container">
+                    <div class="top-logo"><a href="{% url 'welcome'  %}">FATMA</a></div>
+                    <div class="bottom-logo"><a href="{% url 'welcome' %}">Meat & Grocery</a></div>
+                </div>
+            </div>
+            <div class="middle-section-header">
+                <div class="menu-section-header">
+                    {% load static %}
+                    <img class = "menu-pic closed" src="{% static 'home/closed-menu.png' %}" alt="">
+                </div>
+                <div class="left-body-header nav-buttons" id="meat">
+                    Meat
+                </div>
+                <div class="middle-body-header nav-buttons" id="grocery">
+                    Grocery
+                </div>
+                <div class="right-body-header nav-buttons" id="contact-us">
+                    Contact Us
+                </div>
+            </div>
+        </div>
+
+        <div class="right-section-header">
+            <div class="search-bar-container" >
+                <input class="search-bar" type="text" name="q">
+                <button class="search-button">
+                    <img class="search-icon" src="{% static 'home/Search_Icon.svg.png' %}" alt="">
+                </button>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    <div class="menu-section">
+        <div data-name="meat" class="top-menu menu-child">Meat</div>
+        <div data-name="grocery" class="middle-menu menu-child">Grocery</div>
+        <div data-name="contact-us" class="bottom-menu menu-child">Contact Us</div>
+    </div>
+
+
+
+    <div class="background">
+        <div class="left-background"> 
+            <div class="background-text-container">
+                <div class="text">
+                    Enjoy Our <span>Certified </span>  Halal <span> & Authentic </span>  East African 
+                </div>
+            </div>
+        </div>
+        {% load static %}
+        <img src="{% static 'home/goatLeg.png' %}"  class='background-image' alt="">
+    </div>
+    
+    {% comment %} <button id = "meat-button" class="view-products-button">Meat</button> 
+    <button id="grocery-button" class="view-products-button">Grocery</button> {% endcomment %}
+</div>
+
+
+
+{% if page == 'meat' %}
+    <h1 class="identifier hidden">{{page}}</h1>
+{% elif page == 'grocery' %}
+    <h1 class="identifier hidden">{{page}}</h1>
+{% elif page == 'contact-us' %}
+    <h1 class="identifier hidden">{{page}}</h1>
+{% elif page == 'search' %}
+    <h1 data-query="{{q}}" class="identifier hidden">{{page}}</h1>
+{% endif %}
+
+<div class="body">
+    <div class="content-section" data-csrf-token="{{ csrf_token }}">
+    </div>
+
+    <div class="move-to-top-button-container">
+        <button class="move-to-top-button">
+            {% load static %}
+            <img class ="move-to-top-img" src="{% static 'home/arrow.png' %}" alt="">
+        </button>
+    </div>
+
+
+    <div class="bottom-body">
+        <div class="top-section">
+            <a href="{% url 'welcome' %}">
+                <div class="logo2">
+                    <div class="logo2-top">FATMA</div>
+                    <div class="logo2-bottom">Meat & Grocery</div>
+                </div>
+            </a>    
+            <div class="top-section-text">Shop Fatma Halal Meat & Grocery Today</div>
+        </div>
+        <div class="bottom-section">
+            <ul class="list-contacts">
+                <li id="adress">926 Montreal Road Suite 1A Clarkston, GA 30021</li>
+                <li id="number">404-294-1880</li>
+                <li id="mail">fatmahmt@yahoo.com</li>
+            </ul>
+            <div class="schedule-container">
+                <div class="schedule-title">Schedule</div>
+                <ul class="schedule-list">
+                    <li>Sunday <span>10 am to 8 pm</span></li>
+                    <li>Monday <span>10 am to 8 pm</span></li>
+                    <li>Tuesday <span>10 am to 8 pm</span></li>
+                    <li>Wendesday <span>10 am to 8 pm</span></li>
+                    <li>Thursday <span>10 am to 8 pm</span></li>
+                    <li>Friday <span>10 am to 8 pm</span></li>
+                    <li>Saturday <span>10 am to 8 pm</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="module" src="../../static/home/showContent.js?v={% now 'U' %}"></script>
+<script src="../../static/home/welcome_page_js.js?v={% now 'U' %}" type="module"></script>
+<script src="../../static/home/welcome_page_js2.js?v={% now 'U' %}"></script>
+
+{% endblock %}
