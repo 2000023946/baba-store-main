@@ -174,7 +174,7 @@ function generateGroceryProductHtml(name, image){
     return `
         <div class="grocery-display-product">
             <div class="product-image-container">
-                <img class="product-image" src="../../media/grocery/${fileName}" alt="">
+                <img class="product-image" src="../../static/home/${fileName}" alt="">
             </div>
             <div class="product-description">
                 ${name}
