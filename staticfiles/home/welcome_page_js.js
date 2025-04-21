@@ -298,7 +298,7 @@ async function generateMeatHtml(){
     let middleProduct = `
                 <div data-name="all" class="product middle-product">
                     <div class="product-image-container">
-                        <img class="product-image" src="goatLeg.png" alt="">
+                        <img class="product-image" src="../../static/home/meat.png" alt="">
                     </div>
                     <div class="product-description">
                         View all Meat
