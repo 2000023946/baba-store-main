@@ -307,11 +307,12 @@ async function generateMeatHtml(){
             `;
     let count = 0;
     data.forEach(element =>{
+        const fileName = element.image.substring(element.image.lastIndexOf('/') + 1);
         meatDisplayHtml += 
             `
                 <div data-name="${element.name}"class="product">
                     <div class="product-image-container">
-                        <img class="product-image" src="${element.image}" alt="">
+                        <img class="product-image" src="${fileName}" alt="">
                     </div>
                     <div class="product-description">
                         ${element.name}
